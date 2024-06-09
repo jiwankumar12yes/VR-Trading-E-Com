@@ -7,13 +7,15 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/auth.route.js";
 import categoryRoutes from "./routes/category.route.js";
 import productRoutes from "./routes/productRoutes.js";
-
+import { fileURLToPath } from "url";
 // configure env
 dotenv.config();
 
 // database
 connectDB();
 
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
 // rest object
 const app = express();
 
